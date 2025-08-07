@@ -14,11 +14,6 @@ on:
   pull_request:
     branches: [ "master" ]
     
-permissions:
-  contents: read
-  id-token: write
-  dependencies: write
-
 jobs:
   build:
 
@@ -26,10 +21,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up JDK 21
+    - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
-        java-version: '21'
+        java-version: '17'
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
